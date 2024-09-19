@@ -53,5 +53,5 @@ console.log(go) //[ 7, 2, 8, 4, 1, 6, 4, 8, 6]
 
 let mmm = [1,2,3,4]
 
-console.log(mmm.map(String)) //[ '1', '2', '3', '4' ]
+console.log(mmm.map(String)) //[ '1', '2', '3', '4' ]...
 
