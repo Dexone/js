@@ -16,7 +16,7 @@ let red = a.reduce(function(accumulator, item, index){
     accumulator = item
 }
     return accumulator
-}, 0)
+}, 0) 
 
 console.log(red)
 
@@ -26,7 +26,7 @@ let t = [3,5,1,2,8,6] // индекс больего элемента масси
 
 let tt = t.reduce(function(acummulator, item, index){
     let a = 0
-let ind = 0
+let ind = 0 
     if (acummulator < item){
         acummulator = item
         ind = index
