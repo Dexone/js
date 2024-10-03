@@ -38,3 +38,6 @@ function toUnderscore(string) {
     return itog.join('')
   }
   console.log(toUnderscore('TestController'))
+
+
+//   https://www.codewars.com/kata/529b418d533b76924600085d/train/javascript
