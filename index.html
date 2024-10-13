@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<script>
+    function sumIntervals(intervals) {
+        let start = []
+
+        for (let i = 0; i < intervals.length; i++) {
+            start.push(intervals[i])
+        }
+
+
+
+function prohod(){
+        for (let a = 0; a < start.length; a++) { //работа с выбранным интервалом
+            for (let b = 0; b < start.length; b++) { //проход по интервалам
+                console.log(start[b][1])
+                if (start[b][0] > start[a][0] && start[b][0] < start[a][1] && start[b][1] > start[a][1]) { //если 1 число входит в выбранный интервал, а 2 больше второго
+
+                    start[a][1] = start[b][1]
+                    start.splice(b, 1)
+                    prohod()
+                    break
+
+                }
+                if (start[b][0] < start[a][0] && start[b][1] < start[a][1] && start[b][1] > start[a][0]) { //если 1 число меньше первого, а второе входит в интервал
+                    start[a][0] = start[b][0]
+                    start.splice(b, 1)
+                    prohod()
+                    break
+
+                }
+                if (start[b][0] > start[a][0] && start[b][0] < start[a][1] && start[b][1] < start[a][1] && start[b][1] > start[a][0]) { //если 1 число входит в выбранный интервал, и второе входит
+                    start.splice(b, 1)
+                    prohod()
+                    break
+
+                }
+            }
+        }
+    }
+prohod()
+
+
+for(let i = 0; i<start.length; i++){
+    console.log(i)
+}
+
+        return start
+    }
+
+    console.log(sumIntervals([
+    [0, 20],
+   [-100000000, 10],
+   [30, 40]
+    ]))
+</script>
+
+
+
+
+</html>
