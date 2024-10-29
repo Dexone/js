@@ -1,35 +1,23 @@
-function sumIntervals(intervals) {
-    // let itog = []
-    // for(let a = 0; a<intervals.length; a++){
-    //     for(let b = 0; b<itog.length; b++){
-    //         if(itog[b][0] < intervals[a][0] && itog[b][1] > intervals[a][0])
-    //     }
-    // }
-    let start = intervals
-
-    // for(let a = 0; a<start.length; a++){
-
-    //     for(let b = 0; b<start.length; b++){
-
-    //     }
-
-    // }
+function findEvenIndex(arr) {
 
 
-    let obj = {}
 
+    for(let a = 0; a<arr.length; a++){ //смена порядков
 
-    start.forEach(element => {
-        for(let i = element[0]; i<element[1]; i++){
-            obj[i] = 1
+        for(let b = 0; b<a; b++){ //проход слева на право, каждый раз проходит на 1 больше
+            // console.log(b)
         }
-    });
 
-    return obj
+        for(let c = arr.length -1 ; c>a+1; c--){ //проход справа налево, каждый раз на 1 меньше
+            console.log(c)
+        }
+
+    }
+
+
 }
 
-console.log(sumIntervals([
-[0, 20],
-[-100000000, 10],
-[30, 40]
-]))
+
+
+console.log(findEvenIndex([1, 2, 3, 4, 5, 6]))
+// console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
