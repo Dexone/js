@@ -1,42 +1,62 @@
-function solution(words) {
-
+function findUniq(arr) {
+    console.log(arr)
     let start = []
-
-    words.forEach(element => {
-        start.push(element[0] + element[element.length - 1])
+    arr.forEach(element => {
+        start.push([])
+        for (let a = 0; a < element.length; a++) {
+            if (start[start.length - 1].includes(element[a].toLowerCase()) === false) {
+                start[start.length - 1].push(element[a].toLowerCase())
+            }
+            start[start.length - 1].sort()
+        }
     });
-console.log(start)
-
-
 
     let itog = []
 
+    start.forEach(element => {
+        itog.push(element)
+    });
 
-    function prohod() {
+    itog.sort()
+    // console.log(itog)
+    // let index
+    // if (itog[0] === itog[1]) {
+    //     index = start.indexOf(itog[itog.length - 1])
+    // }
+    // console.log(itog[0])
+    // console.log(itog[1])
+    // if (itog[itog.length - 1] === itog[itog.length - 2]) {
+    //     index = start.indexOf(itog[0])
 
-        itog = []
-        itog.push(start[0])
-        start.splice(0, 1)
+    // }
 
-        for(let i = 0; i<start.length; i++){
-            if(start[i][start[i].length -1] === itog[0][0]){ //добавление в начало
-                itog.unshift(start[i])
-                start.splice(i,1)
-                i--
-            }
-            else if(start[i][0] === itog[itog.length - 1][itog[itog.length - 1].length -1]){
-                itog.push(start[i])
-                start.splice(i,1)
-                i--
-            }
+
+
+    // return arr[index]
+    let obj = {}
+
+    itog.forEach(element => {
+        if (obj[element] === undefined) {
+            obj[element] = 0
         }
+        obj[element] = obj[element] + 1
+    });
+
+    console.log(obj[itog[0]])
 
 
-    }
-    prohod()
-console.log(start)
-console.log(itog)
-    return 
+    return obj
+
+
+
 }
 
-console.log(solution(["screen", "desire", "theater", "excess", "night"]))
+
+
+
+console.log(findUniq([
+    ['a'], ['a'],
+    ['a'], ['a'],
+    ['a'], ['a'],
+    ['b']
+]))
