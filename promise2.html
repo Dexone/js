@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // const promise = new Promise((resolve, reject) => {
+        // //   const Number = 3
+        //   const Number = 4
+        // setTimeout(() => {
+        //     if(Number === 3) {
+        //       resolve('Все прошло отлично!');
+        //     } else {
+        //       reject('Что-то пошло не так');
+        //   }
+        //   }, 2000);
+        // });
+
+
+
+        // setTimeout(() => {
+        //     console.log(promise)
+        //   }, 3000);
+
+
+
+
+        let isLoading = true
+
+        fetch(`https://dexone.ru/backend_calorie/users`)
+            .then(function (response) {
+                return response.json()
+            })
+            .catch(function (err) {
+                renderErrorMessage(err)
+            })
+            .finally(function () {
+                isLoading = false
+            })
+
+
+
+
+        try {
+
+            // код...
+
+        } catch (err) {
+
+            // обработка ошибки
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
